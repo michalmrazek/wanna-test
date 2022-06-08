@@ -34,4 +34,5 @@ jobs:
           poetry publish
       - name: Publish docs
         run: |
-          poetry run task docs-deploy
+          pip install mkdocs-material
+          mkdocs gh-deploy --force
