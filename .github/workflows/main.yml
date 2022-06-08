@@ -34,6 +34,5 @@ jobs:
           poetry publish
       - name: Publish docs
         run: |
-          ls -la
           poetry install
           poetry run task docs-deploy
