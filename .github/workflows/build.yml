@@ -19,6 +19,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install poetry
           poetry install
-      - name: Install dependencies
+      - name: Build
         run: |
           poetry run task build
