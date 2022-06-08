@@ -35,4 +35,4 @@ jobs:
       - name: Publish docs
         run: |
           pip install mkdocs-material
-          mkdocs gh-deploy --force
+          mkdocs gh-deploy --force -f mkdocs.yaml
