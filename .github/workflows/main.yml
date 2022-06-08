@@ -35,5 +35,5 @@ jobs:
       - name: Publish docs
         run: |
           ls -la
-          pip install mkdocs-material
-          mkdocs gh-deploy --force -f mkdocs.yaml
+          poetry install
+          poetry run task docs-deploy
