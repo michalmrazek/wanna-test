@@ -2,7 +2,7 @@
 authors = ["Joao Da Silva <joao.silva1@avast.com>", "Michal Mrazek <michal.mrazek@avast.com>"]
 description = "CLI tool for managing ML projects on Vertex AI"
 name = "wanna-ml-test"
-version = "0.0.0"
+version = "0.0.4"
 packages = [
     { include = "wanna", from = "src" },
 ]
