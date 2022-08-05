@@ -38,7 +38,6 @@ def perform_check() -> None:
         )
         typer.echo(
             UPDATE_MESSAGE,
-            fg="yellow",
         )
     else:
         typer.echo(f"Your wanna cli is up to date with {latest_version}")
