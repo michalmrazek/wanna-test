@@ -23,7 +23,6 @@ jobs:
       - name: Build and publish
         run: |
           poetry version $(git describe --tags --abbrev=0)
-          poetry install
           poetry build
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
           poetry publish
