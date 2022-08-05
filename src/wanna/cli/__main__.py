@@ -31,7 +31,7 @@ def perform_check() -> None:
     """Perform the version check and instructs the user about the next steps"""
 
     latest_version = get_latest_version()
-    version = pkg_resources.get_distribution("wanna-ml").version
+    version = pkg_resources.get_distribution("wanna-ml-test").version
     if latest_version and version < latest_version:
         typer.echo(
             f"Installed version is {version}, the latest version is {latest_version}",
