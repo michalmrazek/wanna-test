@@ -35,6 +35,8 @@ jobs:
     environment: wanna-test
     needs: build
     steps:
+      - name: Extract Git Tag
+          run: echo "GIT_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -48,5 +50,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          build-args: WANNA_VERSION=$(git describe --tags --abbrev=0)
-          tags: michalmrazekavast/wanna-test:$(git describe --tags --abbrev=0)
+          build-args: WANNA_VERSION=${{ env.GIT_TAG }}
+          tags: michalmrazekavast/wanna-test:${{ env.GIT_TAG }}
