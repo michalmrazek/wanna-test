@@ -36,7 +36,7 @@ jobs:
     needs: build
     steps:
       - name: Extract Git Tag
-          run: echo "GIT_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+        run: echo "GIT_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
