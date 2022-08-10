@@ -35,6 +35,7 @@ jobs:
     environment: wanna-test
     needs: build
     steps:
+      - uses: actions/checkout@v3
       - name: Extract Git Tag
         run: echo "GIT_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
       - name: Set up QEMU
