@@ -32,6 +32,7 @@ jobs:
           poetry run task docs-deploy
   docker:
     runs-on: ubuntu-latest
+    environment: wanna-test
     needs: build
     steps:
       - name: Set up QEMU
