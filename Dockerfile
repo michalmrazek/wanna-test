@@ -8,7 +8,9 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.c
 ARG WANNA_VERSION
 RUN pip install wanna-ml-test==$WANNA_VERSION jupyterlab
 
+# Create wanna-tester user
 RUN useradd -ms /bin/bash  wanna-tester
+USER wanna-tester
 WORKDIR /usr/local/bin/wanna-tester
 # Copy samples and tutorials
 COPY samples samples
