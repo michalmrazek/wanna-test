@@ -47,10 +47,16 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
+      - name: Build and push Docker Image
         uses: docker/build-push-action@v3
         with:
           push: true
           build-args: WANNA_VERSION=${{ env.GIT_TAG }}
           file: docker/Dockerfile
           tags: michalmrazekavast/wanna-test:${{ env.GIT_TAG }},michalmrazekavast/wanna-test:latest
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: michalmrazekavast/wanna-test
