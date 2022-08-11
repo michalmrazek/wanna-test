@@ -6,12 +6,12 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.c
 
 # Install wanna and jupyter for tutorials
 ARG WANNA_VERSION
-RUN pip install wanna-ml-test==$WANNA_VERSION jupyterlab
+RUN pip install wanna-ml-test==$WANNA_VERSION
 
-# Create wanna-tester user
-RUN useradd -ms /bin/bash  wanna-tester
-USER wanna-tester
-WORKDIR /usr/local/bin/wanna-tester
+
 # Copy samples and tutorials
-COPY samples samples
-COPY tutorials tutorials
+COPY samples /samples
+COPY tutorials /tutorials
+
+COPY run_jupyter.sh /tutorials/run_jupyter.sh
+RUN chmod +x /tutorials/run_jupyter.sh

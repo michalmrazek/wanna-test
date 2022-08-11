@@ -52,4 +52,5 @@ jobs:
         with:
           push: true
           build-args: WANNA_VERSION=${{ env.GIT_TAG }}
+          file: docker/Dockerfile
           tags: michalmrazekavast/wanna-test:${{ env.GIT_TAG }},michalmrazekavast/wanna-test:latest
