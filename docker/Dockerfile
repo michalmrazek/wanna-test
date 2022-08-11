@@ -15,5 +15,5 @@ WORKDIR /wanna
 COPY samples samples
 COPY tutorials tutorials
 
-COPY docker/run_jupyter.sh tutorials/run_jupyter.sh
-RUN chmod +x tutorials/run_jupyter.sh
+COPY docker/run_jupyter.sh run_jupyter.sh
+RUN chmod +x run_jupyter.sh
