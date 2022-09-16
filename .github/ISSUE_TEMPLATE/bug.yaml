@@ -2,8 +2,7 @@ name: Bug Report YAML
 description: File a bug report
 title: "[Bug]: "
 labels: ["bug"]
-assignees:
-  - michalmrazek
+assignees: [michalmrazek]
 body:
   - type: markdown
     attributes:
