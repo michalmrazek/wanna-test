@@ -35,7 +35,7 @@ body:
     validations:
       required: true
       
-   - type: textarea
+  - type: textarea
     id: wanna-cli-command
     attributes:
       label: wanna-ml CLI command
